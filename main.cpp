@@ -1,46 +1,54 @@
+//Joseph Murkijanian
 // This program calculates and displays business expenses.
 #include <iostream>
 #include <iomanip>
+#include <string>
 int main()
 {
-double meal, hotel, total;
-std::string location;
-int days;
-std::string meal_string;
-std::string hotel_string;
-std::string total_string;
+double Meal, Hotel, Total;
+std::string Location;
+int Days;
+
+//Adds Dollar sign to code
+char dollar_sign = '$';
+
 //asks for general info about trip
 std::cout << "Welcome to the Business Trip Tracker!\n";
 
+//Asks for location
 //Used getline to output more than two words for the location
 std::cout << "What is the business trip location?\n";
-getline(std::cin, location);
+getline(std::cin, Location);
 
+//Asks for days
 std::cout << "How many days will the trip take?\n";
-std::cin >> days;
+std::cin >> Days;
 
+//Asks for hotel expenses
 std::cout << "What is the total hotel expense?\n";
-std::cin >> hotel;
+std::cin >> Hotel;
 
-
+//Asks for meal expense
 std::cout << "What is the total meal expense?\n";
-std::cin >> meal;
+std::cin >> Meal;
 
-//find the total
-total = meal + hotel;
+//Find the total
+Total = Meal + Hotel;
 
-//sets up data in a chart
-std::cout << std::setw(10) << "location"
-<< std::setw(10) << "days"
-<< std::setw(10) << "meal"
-<< std::setw(10) << "hotel"
-<<std::setw(10) << "total" <<std::endl;
+//Sets up data in a chart
+std::cout << std::setw(10) << "Location"
+<< std::setw(14) << "Days"
+<< std::setw(14) << "Meal"
+<< std::setw(14) << "Hotel"
+<<std::setw(13) << "Total" <<std::endl;
 
-std::cout << std::setw(10) << location
-<< std::setw(10) << days
-<< std::setw(10) << meal
-<< std::setw(10) << hotel
-<< std::setw(10) <<total <<std::endl;
+//Added the dollar_sign value I created above to the output as shown
+//Used substr to set a range of 20 for the location output
+std::cout << std::setw(10) << Location.substr(0, 20)
+<< std::setw(10) << Days
+<< std::setw(10) << dollar_sign << Meal
+<< std::setw(8) <<dollar_sign << Hotel
+<< std::setw(7) << dollar_sign <<Total <<std::endl;
 
 
 return 0;
