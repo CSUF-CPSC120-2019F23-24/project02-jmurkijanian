@@ -46,9 +46,9 @@ std::cout << std::setw(10) << "Location"
 //Used substr to set a range of 20 for the location output
 std::cout << std::setw(10) << Location.substr(0, 20)
 << std::setw(10) << Days
-<< std::setw(10) << dollar_sign << Meal
-<< std::setw(8) <<dollar_sign << Hotel
-<< std::setw(7) << dollar_sign <<Total <<std::endl;
+<< std::setw(10) << dollar_sign << std::fixed << std::setprecision(2) << Meal
+<< std::setw(8) <<dollar_sign << std::fixed << std::setprecision(2) << Hotel
+<< std::setw(7) << dollar_sign << std::fixed << std::setprecision(2)<<Total <<std::endl;
 
 
 return 0;
